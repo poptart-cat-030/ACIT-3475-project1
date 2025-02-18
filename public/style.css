@@ -1,0 +1,266 @@
+.deleteForm, .editForm {
+  display: inline-block
+}
+
+
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: whitesmoke;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+.text-center h3 {
+  margin-top: 5vh;
+}
+
+.home-page-body {
+  background-color: rgb(91, 181, 157)
+}
+
+.home-page {
+  position: relative;
+  top: 15%;
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+.home-page-bg {
+  padding: 150px;
+}
+
+.home-page h1 {
+  padding-left: 15px;
+}
+
+.home-page-auth-buttons a:first-child {
+  padding-right: 10px;
+}
+
+.auth-greeting {
+  text-align: center;
+}
+
+.navbar {
+  background-color: rgb(76, 167, 129);
+}
+
+.navbar a {
+  color: rgb(255, 255, 255);
+}
+
+.navbar-nav {
+  position: sticky;
+  margin: auto;
+  margin-left: 55vh;
+}
+
+.navbar-nav a {
+  margin: 0px 5px 0px 5px;
+}
+
+#about-me {
+  margin-top: 5vh;
+  scroll-margin: 88px 0px 0px 0px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
+#about-me div {
+  text-align: left;
+  max-width: 120vh;
+  margin: auto;
+}
+
+#skills {
+  margin-top: 5vh;
+  scroll-margin: 88px 0px 0px 0px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
+#skills h3 {
+  text-align: left;
+  max-width: 120vh;
+  margin: auto;
+}
+
+#skills div {
+  margin: auto;
+  text-align: center;
+}
+
+#skills div section h3 {
+  text-align: center;
+}
+
+#skills img {
+  margin-bottom: 50vh;
+}
+
+#projects {
+  margin-top: 5vh;
+  scroll-margin: 88px 0px 0px 0px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
+#projects div {
+  text-align: left;
+  margin: auto;
+}
+
+#resume {
+  margin-top: 5vh;
+  scroll-margin: 88px 0px 0px 0px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
+#resume div {
+  margin: auto;
+}
+
+#contact {
+  margin-top: 5vh;
+  scroll-margin: 88px 0px 0px 0px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
+#contact div {
+  text-align: left;
+  max-width: 120vh;
+  margin: auto;
+}
+
+header.masthead {
+  position: relative;
+  background-color: #fff;
+  background: url("https://image.freepik.com/free-vector/reading-list-concept-illustration_114360-1005.jpg") no-repeat right center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.masthead .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+}
+
+header.masthead h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+.showcase .showcase-text {
+  padding: 3rem;
+}
+
+.showcase .showcase-img {
+  min-height: 30rem;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .showcase .showcase-text {
+    padding: 7rem;
+  }
+}
+
+.features-icons {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.features-icons .features-icons-item {
+  max-width: 20rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon {
+  height: 7rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon i {
+  font-size: 4.5rem;
+}
+
+.features-icons .features-icons-item:hover .features-icons-icon i {
+  font-size: 5rem;
+}
+
+.testimonials {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.testimonials .testimonial-item {
+  max-width: 18rem;
+}
+
+.testimonials .testimonial-item img {
+  max-width: 12rem;
+  box-shadow: 0px 5px 5px 0px #adb5bd;
+}
+
+.call-to-action {
+  position: relative;
+  background-color: #343a40;
+  background: url("./img/bg-masthead.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.call-to-action .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+footer.footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.form-signin .checkbox{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
