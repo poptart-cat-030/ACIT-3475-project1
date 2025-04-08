@@ -1,6 +1,5 @@
-
-
 const express = require("express");
+const router = express.Router();
 const app = express();
 
 const path = require("path");
@@ -34,6 +33,7 @@ app.use(passport.session());
 
 app.set("view engine", "ejs");
 app.use(ejsLayouts);
+app.use(router)
 
 app.use((req, res, next) => {
   console.log(`User details are: `);
@@ -46,6 +46,19 @@ app.use((req, res, next) => {
   console.log(req.session.passport);
   next();
 });
+
+// Google OAuth
+router.get("/auth/google/callback", 
+  passport.authenticate('google', { failureRedirect: '/error/' }),
+  function(req, res) {
+    res.redirect('/');
+  });
+
+router.get("/auth/google",
+    passport.authenticate('google', {
+        scope:['https://www.googleapis.com/auth/userinfo.profile', 
+                'https://www.googleapis.com/auth/userinfo.email']
+}));
 
 // Routes start here
 

@@ -1,5 +1,7 @@
-const passport = require("passport");
+const passport = require("passport")
 const LocalStrategy = require("passport-local").Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
 const userController = require("../controller/userController.js");
 // const { db } = require("../models/userModel.js");
 const { PrismaClient } = require("@prisma/client");
@@ -46,5 +48,23 @@ passport.deserializeUser(async function(id, done) {
     done(null, user);
   }
 );
+
+const oauth_login = (new GoogleStrategy({
+  clientID: "711930648739-a3d1lmtfofqh4v99q1vl7ecrbf0o3a2c.apps.googleusercontent.com",
+  clientSecret: "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",
+  callbackURL: "http://portfolio.hillarylam.info/auth/google/callback"
+},
+function(accessToken, refreshToken, profile, cb) {
+  cb(null, profile);
+    }
+));
+
+passport.use(oauth_login)
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
 
 module.exports = passport
