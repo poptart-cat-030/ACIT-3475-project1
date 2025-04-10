@@ -29,15 +29,25 @@ let authController = {
       }
     })
   },
-  revoke: (req, res) => {
-    const revokeId = req.body.sessionId
-    console.log(revokeId)
-    req.sessionStore.destroy(revokeId, (err,any) => {})
-    res.redirect('/admin')
-  },
-  // loginSubmit: (req, res) => {
-  //   console.log("req",req);
+  // For old admin page
+  // revoke: (req, res) => {
+  //   const revokeId = req.body.sessionId
+  //   console.log(revokeId)
+  //   req.sessionStore.destroy(revokeId, (err,any) => {})
+  //   res.redirect('/admin')
   // },
+  revoke: (req, res, next) => {
+    req.logout((err) => { // req.logout removes req.user
+      if (err) return next(err);
+      
+      req.session.destroy((err) => { // destroy the session
+        if (err) return next(err);
+        res.clearCookie('connect.sid'); // removes the session cookie
+        res.redirect('/auth/login'); // take user back to login page
+      });
+    });
+  },
+  
 
 // making register submit
 registerSubmit: async (req, res) => {

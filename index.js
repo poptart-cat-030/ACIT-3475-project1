@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 const router = express.Router();
 const app = express();
@@ -51,7 +53,7 @@ app.use((req, res, next) => {
 router.get("/auth/google/callback", 
   passport.authenticate('google', { failureRedirect: '/error/' }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/portfolio');
   });
 
 router.get("/auth/google",
@@ -63,6 +65,7 @@ router.get("/auth/google",
 // Routes start here
 
 app.get("/portfolio", ensureAuthenticated, reminderController.list);
+app.get("/auth/revoke", authController.revoke);
 
 // register fixing
 app.get("/auth/register", forwardAuthenticated, authController.register);
@@ -70,7 +73,7 @@ app.get("/auth/register", forwardAuthenticated, authController.register);
 app.post("/auth/register", authController.registerSubmit);
 
 app.get("/auth/login", forwardAuthenticated, authController.login);
-app.get("/admin", isAdmin,authController.admin);
+app.get("/admin", isAdmin, authController.admin);
 app.post("/auth/register", authController.registerSubmit);
 app.post("/auth/login", authController.loginSubmit);
 app.post("/auth/revoke", authController.revoke);
